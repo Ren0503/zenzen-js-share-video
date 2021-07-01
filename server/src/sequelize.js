@@ -26,12 +26,14 @@ const VideoLike = VideoLikeModel(sequelize, DataTypes);
 const Comment = CommentModel(sequelize, DataTypes);
 const View = ViewModel(sequelize, DataTypes);
 
-// Related
+// Related video-user
 Video.belongsTo(User, { foreignKey: "userId" })
 
+// Likes
 User.belongsToMany(Video, { through: VideoLike, foreignKey: "userId" });
 Video.belongsToMany(User, { through: VideoLike, foreignKey: "videoId" });
 
+// Comments
 User.hasMany(Comment, {
     foreignKey: "userId",
 });
@@ -41,10 +43,12 @@ Video.hasMany(Comment, {
     foreignKey: "videoId",
 });
 
+// subscription
 User.hasMany(Subscription, {
     foreignKey: "subscribeTo",
 });
 
+// Views
 User.belongsToMany(Video, { through: View, foreignKey: "userId" });
 Video.belongsToMany(User, { through: View, foreignKey: "videoId" });
 
