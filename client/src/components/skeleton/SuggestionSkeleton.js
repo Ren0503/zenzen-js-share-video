@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StyledTrending } from './TrendingSkeleton';
+import { StyledTrending } from 'styles/StyledScreen';
 import { SkeletonLine, ChannelInfoSkeleton } from 'styles/Skeleton';
 
 const Wrapper = styled.div`
