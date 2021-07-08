@@ -27,7 +27,7 @@ const Wrapper = styled.div`
 const ChannelTabVideo = () => {
     const { videos } = useSelector(state => state.profile.data);
 
-    if (!video?.length) {
+    if (!videos?.length) {
         return <p>This channel hasn't posted any videos yet.</p>;
     }
 

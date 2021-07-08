@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getChannels } from 'reducers/channel';
 import SuggestionSkeleton from 'components/skeleton/SuggestionSkeleton';
-import { StyledTrending } from 'components/skeleton/TrendingSkeleton';
+import { StyledTrending } from 'styles/StyledScreen';
 import ChannelInfo from 'components/channels/ChannelInfo';
 
 

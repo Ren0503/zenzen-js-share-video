@@ -1,4 +1,4 @@
-import { client } from "../../../../../../Video/Video-sharing/youtubeclone-frontend/src/utils";
+import { client } from 'utils/fetch';
 
 export const authenticate = async (type, data) => {
     const backendUrl = process.env.REACT_APP_BE;

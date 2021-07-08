@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { StyledAuth } from 'styles/StyledScreen';

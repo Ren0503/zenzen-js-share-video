@@ -25,7 +25,7 @@ const profileSlice = createSlice({
             };
         },
         clearProfile(state, action) {
-            state.isFetching = true,
+            state.isFetching = true;
             state.data = {};
         },
         subscribeFromProfile(state, action) {

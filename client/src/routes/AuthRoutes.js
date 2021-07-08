@@ -1,4 +1,4 @@
-import React, { userState} from 'react';
+import React, { useState} from 'react';
 import Login from 'screens/Auth/Login';
 import Signup from 'screens/Auth/SignUp';
 

@@ -10,7 +10,7 @@ const {
     recommendChannels,
     getLikedVideos,
     getHistory,
-} = require('../controllers/user');
+} = require('../controllers/userController');
 
 router.route('/')
     .put(protect, editUser)

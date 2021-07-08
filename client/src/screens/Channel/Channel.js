@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled, { css } from 'styled-components';
 import { Link, useParams } from 'react-router-dom';
@@ -115,14 +115,14 @@ const Channel = () => {
     const profileId = userId || loggedInUserId;
 
     const handleSubscribe = (channel) => {
-        dispatch(subscribeFromVideo());
+        dispatch(subscribeFromProfile());
         dispatch(addChannel(channel));
         addChannelLocalSt(channel);
         client(`${process.env.REACT_APP_BE}/users/${channel.id}/toggleSubscribe`);
     };
 
     const handleUnsubscribe = (channelId) => {
-        dispatch(unsubscribeFromVideo());
+        dispatch(unsubscribeFromProfile());
         dispatch(removeChannel(channelId));
         removeChannelLocalSt(channelId);
         client(`${process.env.REACT_APP_BE}/users/${channelId}/toggleSubscribe`);

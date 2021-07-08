@@ -1,6 +1,27 @@
 import React from 'react';
+import styled from 'styled-components';
 import { StyledTrending } from 'styles/StyledScreen';
 import { SkeletonLine, TrendingCardSkeleton } from 'styles/Skeleton';
+
+const SkeletonWrapper = styled.div`
+    display: flex;
+
+    @media screen and (max-width: 750px) {
+        .video-info-container {
+        margin-left: 1.5rem;
+        }
+    }
+
+    @media screen and (max-width: 645px) {
+        flex-direction: column;
+
+        .video-info-container {
+        margin-left: 0;
+        margin-top: 1rem;
+        }
+    }
+`;
+
 
 const TrendingSkeleton = () => {
     return (

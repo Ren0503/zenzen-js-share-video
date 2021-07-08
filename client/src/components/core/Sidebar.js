@@ -9,7 +9,8 @@ import {
     SubIcon,
     LibIcon,
     VideoIcon,
-    LikeIcon
+    LikeIcon,
+    HistoryIcon,
 } from 'components/icons';
 import Subscriptions from './Subscriptions';
 
