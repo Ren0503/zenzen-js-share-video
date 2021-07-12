@@ -10,11 +10,11 @@ const errorHandler = (err, req, res, next) => {
 
     if (err.name === "SequelizeUniqueConstraintError") {
         const field = err.errors.map((error) => error.path)[0];
-        message = `The ${field} is already token`;
+        message = `The ${field} is already taken`;
         statusCode = 400;
     }
 
-    res.status(statusCode).join({ success: "false", message });
+    res.status(statusCode).json({ success: "false", message });
 };
 
 module.exports = errorHandler;

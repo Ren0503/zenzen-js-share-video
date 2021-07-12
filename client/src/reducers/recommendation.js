@@ -4,9 +4,7 @@ import { client } from 'utils/fetch';
 export const getRecommendation = createAsyncThunk(
     "recommendation/getRecommendation",
     async () => {
-        const { data } = await client(
-            `${process.env.REACT_APP_BE}/videos`
-        );
+        const { data } = await client(`${process.env.REACT_APP_BE}/videos`);
         return data;
     }
 );

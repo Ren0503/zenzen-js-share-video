@@ -77,4 +77,4 @@ exports.me = async (req, res) => {
     user.setDataValue("channels", channels);
 
     res.status(200).json({ success: true, data: user });
-}
+};
