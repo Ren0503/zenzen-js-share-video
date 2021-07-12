@@ -14,7 +14,7 @@ const UploadVideo = () => {
     const [thumbnail, setThumbnail] = useState('');
 
     const handleVideoUpload = async (e) => {
-        const file = e.target.file[0];
+        const file = e.target.files[0];
 
         if (file) {
             const size = file.size / 1000000;
@@ -40,7 +40,7 @@ const UploadVideo = () => {
             <label htmlFor="video-upload">
                 <UploadIcon />
             </label>
-            <input 
+            <input
                 style={{ display: "none" }}
                 id="video-upload"
                 type="file"
@@ -48,7 +48,7 @@ const UploadVideo = () => {
                 onChange={handleVideoUpload}
             />
             {showModal && (
-                <UploadVideoModal 
+                <UploadVideoModal
                     closeModal={closeModal}
                     previewVideo={previewVideo}
                     thumbnail={thumbnail}

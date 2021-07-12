@@ -9,14 +9,14 @@ import VideoGrid from 'styles/VideoGrid';
 
 const Home = () => {
     const dispatch = useDispatch();
-    const { isFetching, videos } = useSelector(state => state.recommendation);
+    const { isFetching, videos } = useSelector((state) => state.recommendation);
 
     useEffect(() => {
         dispatch(getRecommendation());
     }, [dispatch]);
 
     if (isFetching) {
-        return <HomeSkeleton title={true} />
+        return <HomeSkeleton title={true}/>;
     }
 
     return (

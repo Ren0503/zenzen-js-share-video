@@ -7,7 +7,7 @@ exports.toggleSubscribe = asyncHandler(async (req, res, next) => {
         return next({
             message: "You cannot to subscribe to your own channel",
             statusCode: 400,
-        })
+        });
     }
 
     const user = await User.findByPk(req.params.id);
@@ -213,7 +213,7 @@ exports.getProfile = asyncHandler(async (req, res, next) => {
         return res.status(200).json({ success: true, data: user });
 
     videos.forEach(async (video, index) => {
-        const views = await View.count({ where: { videoId: video.id }});
+        const views = await View.count({ where: { videoId: video.id } });
         video.setDataValue("views", views);
 
         if (index === videos.length - 1) {
@@ -233,7 +233,7 @@ exports.recommendedVideos = asyncHandler(async (req, res, next) => {
             "userId",
             "createdAt",
         ],
-        include: [{ model: User, attributes: ["id", "avatar", "username"]}],
+        include: [{ model: User, attributes: ["id", "avatar", "username"] }],
         order: [["createdAt", "DESC"]],
     });
 
@@ -241,7 +241,7 @@ exports.recommendedVideos = asyncHandler(async (req, res, next) => {
         return res.status(200).json({ success: true, data: videos });
 
     videos.forEach(async (video, index) => {
-        const views = await View.count({ where: { videoId: video.id }});
+        const views = await View.count({ where: { videoId: video.id } });
         video.setDataValue("views", views);
 
         if (index === videos.length - 1) {
@@ -279,7 +279,7 @@ exports.recommendChannels = asyncHandler(async (req, res, next) => {
 
         channel.setDataValue("isSubscribed", !!isSubscribed);
 
-        const videosCount = await Video.count({ where: { userId: channel.id }});
+        const videosCount = await Video.count({ where: { userId: channel.id } });
         channel.setDataValue("videosCount", videosCount);
 
         if (index === channels.length - 1) {
@@ -293,7 +293,7 @@ exports.getLikedVideos = asyncHandler(async (req, res, next) => {
 });
 
 exports.getHistory = asyncHandler(async (req, res, next) => {
-    return getVideos(Views, req, res, next);
+    return getVideos(View, req, res, next);
 });
 
 const getVideos = async (model, req, res, next) => {
