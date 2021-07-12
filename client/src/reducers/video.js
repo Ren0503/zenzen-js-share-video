@@ -19,7 +19,7 @@ const videoSlice = createSlice({
             state.isFetching = true;
             state.data = {};
         },
-        adComment(state, action) {
+        addComment(state, action) {
             state.data = {
                 ...state.data,
                 comments: [action.payload, ...state.data.comments],

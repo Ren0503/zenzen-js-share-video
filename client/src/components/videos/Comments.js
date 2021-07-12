@@ -108,7 +108,7 @@ const Comments = () => {
                                     {comment.User?.username}
                                 </Link>
                             </span>
-                            <span style={{ marginLeft: "0.6rem"}}>
+                            <span style={{ marginLeft: "0.6rem" }}>
                                 {timeSince(comment.createdAt)} ago
                             </span>
                         </p>
