@@ -6,18 +6,17 @@ import NoResults from 'components/shared/NoResult';
 import { useDispatch, useSelector } from 'react-redux';
 import TrendingCard from 'components/shared/TrendingCard';
 import TrendingSkeleton from 'components/skeleton/TrendingSkeleton';
-import { getSearchResults, clearSearchResult } from 'reducers/search';
+import { getSearchResults, clearSearchResults } from 'reducers/search';
 
 const SearchResults = () => {
     const { searchTerm } = useParams();
     const dispatch = useDispatch();
-    const { isFetching, users, videos } = useSelector(state => state.SearchResults);
-
+    const { isFetching, users, videos } = useSelector(state => state.searchResult);
     useEffect(() => {
         dispatch(getSearchResults(searchTerm));
 
         return () => {
-            dispatch(clearSearchResult());
+            dispatch(clearSearchResults());
         }
     }, [dispatch, searchTerm]);
 
@@ -37,8 +36,7 @@ const SearchResults = () => {
                 {!isFetching &&
                     users.map((channel) => (
                         <ChannelInfo key={channel.id} search={true} channel={channel} />
-                    ))
-                }
+                    ))}
             </StyledChannels>
 
             {!isFetching && videos.map((video) => (

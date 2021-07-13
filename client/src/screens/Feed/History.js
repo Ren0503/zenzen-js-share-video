@@ -28,8 +28,8 @@ const History = ({ nopad }) => {
                 </p>
             )}
 
-            {!videos.map((video) => (
-                <Link to={`/watch/${video.id}`} key={video.id}>
+            {videos.map((video) => (
+                <Link key={video.id} to={`/watch/${video.id}`}>
                     <TrendingCard video={video} />
                 </Link>
             ))}

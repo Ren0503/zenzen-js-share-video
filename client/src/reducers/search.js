@@ -23,14 +23,14 @@ const searchResultSlice = createSlice({
         videos: [],
     },
     reducers: {
-        toggleSubscribeSearchResult(state, action) {
-            state.users = state.users.map((user) => 
+        toggleSubscribeSearchResults(state, action) {
+            state.users = state.users.map((user) =>
                 action.payload === user.id
-                ? { ...user, isSubscribed: !user.isSubscribed }
-                : user
+                    ? { ...user, isSubscribed: !user.isSubscribed }
+                    : user
             );
         },
-        clearSearchResult(state, action) {
+        clearSearchResults(state, action) {
             state.users = [];
             state.videos = [];
             state.isFetching = true;
@@ -46,9 +46,9 @@ const searchResultSlice = createSlice({
 });
 
 export const {
-    toggleSubscribeSearchResult,
-    unsubscribeFromSearchResult,
-    clearSearchResult,
+    toggleSubscribeSearchResults,
+    unsubscribeFromSearchResults,
+    clearSearchResults,
 } = searchResultSlice.actions;
 
 export default searchResultSlice.reducer;

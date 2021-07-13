@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Button from 'styles/Button';
 import { client } from 'utils/fetch';
 import { addChannel, removeChannel } from 'reducers/user';
-import { toggleSubscribeSearchResult } from 'reducers/search';
+import { toggleSubscribeSearchResults } from 'reducers/search';
 import { toggleSubscribeChannelRecommendation } from 'reducers/channel';
 import { addChannelLocalSt, removeChannelLocalSt } from 'utils/localStorage';
 
@@ -81,7 +81,7 @@ const ChannelInfo = ({ search, channel }) => {
 
     const handleSubscribe = (channel) => {
         if (search) {
-            dispatch(toggleSubscribeSearchResult(channel.id));
+            dispatch(toggleSubscribeSearchResults(channel.id));
         }
 
         dispatch(toggleSubscribeChannelRecommendation(channel.id));
@@ -92,7 +92,7 @@ const ChannelInfo = ({ search, channel }) => {
 
     const handleUnSubscribe = (channelId) => {
         if (search) {
-            dispatch(toggleSubscribeSearchResult(channelId));
+            dispatch(toggleSubscribeSearchResults(channelId));
         }
 
         dispatch(toggleSubscribeChannelRecommendation(channel.id));
