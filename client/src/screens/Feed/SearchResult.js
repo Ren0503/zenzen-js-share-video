@@ -12,6 +12,7 @@ const SearchResults = () => {
     const { searchTerm } = useParams();
     const dispatch = useDispatch();
     const { isFetching, users, videos } = useSelector(state => state.searchResult);
+    
     useEffect(() => {
         dispatch(getSearchResults(searchTerm));
 

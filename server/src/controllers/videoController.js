@@ -111,7 +111,7 @@ exports.getVideo = asyncHandler(async (req, res, next) => {
     const isVideoMine = req.user.id === video.userId;
 
     // Count like, view, subscribe
-    
+
     video.setDataValue('comments', comments);
     video.setDataValue('commentsCount', commentsCount);
     video.setDataValue('isLiked', !!isLiked);
@@ -269,11 +269,11 @@ exports.newView = asyncHandler(async (req, res, next) => {
 
 exports.searchVideo = asyncHandler(async (req, res, next) => {
     if (!req.query.searchTerm) {
-        return next({ message: "Please enter the searchterm", statusCode: 400 });
+        return next({ message: "Please enter the searchTerm", statusCode: 400 });
     }
 
     const videos = await Video.findAll({
-        include: { model: User, attributes: ["id", "avatar", "username"]},
+        include: { model: User, attributes: ["id", "avatar", "username"] },
         where: {
             [Op.or]: {
                 title: {
@@ -290,7 +290,7 @@ exports.searchVideo = asyncHandler(async (req, res, next) => {
         return res.status(200).json({ success: true, data: videos });
 
     videos.forEach(async (video, index) => {
-        const views = await View.count({ where: { videoId: video.id }});
+        const views = await View.count({ where: { videoId: video.id } });
         video.setDataValue("views", views);
 
         if (index === videos.length - 1) {
