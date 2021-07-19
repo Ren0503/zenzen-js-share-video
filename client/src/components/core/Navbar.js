@@ -7,6 +7,7 @@ import { openSidebar, closeSidebar } from 'reducers/sidebar';
 import { useDispatch, useSelector } from 'react-redux';
 import Avatar from 'styles/Avatar';
 import Search from './Search';
+import logo from 'assets/loader.png';
 
 const Wrapper = styled.div`
     position: fixed;
@@ -87,8 +88,8 @@ const Wrapper = styled.div`
 const Navbar = () => {
     const dispatch = useDispatch();
 
-    const {data: user} = useSelector(state => state.user);
-    const {sidebar: open} = useSelector(state => state.sidebar);
+    const { data: user } = useSelector(state => state.user);
+    const { sidebar: open } = useSelector(state => state.sidebar);
 
     const handleToggleSidebar = () => {
         open ? dispatch(closeSidebar()) : dispatch(openSidebar());
@@ -97,12 +98,15 @@ const Navbar = () => {
     return (
         <Wrapper>
             <div className="logo flex-row">
-                <HamburgerIcon 
+                <HamburgerIcon
                     className="toggle-navhandler"
                     onClick={handleToggleSidebar}
                 />
                 <span>
-                    <Link to="/">ZenZen</Link>
+                    <Link to="/">
+                        <img src={logo} alt="Logo" width="25" />
+                        <p>ZenZen</p>
+                    </Link>
                 </span>
             </div>
 
