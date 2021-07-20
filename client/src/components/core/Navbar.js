@@ -105,7 +105,7 @@ const Navbar = () => {
                 <span>
                     <Link to="/">
                         <img src={logo} alt="Logo" width="25" />
-                        <p>ZenZen</p>
+                        ZenZen
                     </Link>
                 </span>
             </div>

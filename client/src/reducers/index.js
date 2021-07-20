@@ -8,8 +8,8 @@ import profile from './profile';
 import sidebar from './sidebar';
 import recommendation from './recommendation';
 import channelRecommendation from './channel';
-import searchResult from './channel';
-import trending from './channel';
+import searchResult from './search';
+import trending from './trending';
 import likedVideo from './liked';
 import history from './history';
 
