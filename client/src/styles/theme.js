@@ -8,7 +8,7 @@ export const darkTheme = {
     red: "#CC0000",
     blue: "#3EA6FF",
     white: "#FFF",
-    pink: "#F86782",
-    purple: "#282A36",
+    pink: "#CD113B",
+    purple: "#52006A",
     font: "Fira Sans",
 };

@@ -7,7 +7,7 @@ import { openSidebar, closeSidebar } from 'reducers/sidebar';
 import { useDispatch, useSelector } from 'react-redux';
 import Avatar from 'styles/Avatar';
 import Search from './Search';
-import logo from 'assets/loader.png';
+import logo from 'assets/logo.png';
 
 const Wrapper = styled.div`
     position: fixed;
@@ -104,8 +104,7 @@ const Navbar = () => {
                 />
                 <span>
                     <Link to="/">
-                        <img src={logo} alt="Logo" width="25" />
-                        ZenZen
+                        <img src={logo} alt="Logo" width="40" />
                     </Link>
                 </span>
             </div>
