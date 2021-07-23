@@ -73,9 +73,9 @@ export const StyledAuth = styled.div`
 
     button {
         padding: 0.4rem 1rem;
-        background: linear-gradient(90deg, ${(props) => props.theme.purple}, ${(props) => props.theme.pink});
+        background: ${(props) => props.theme.red};
         color: ${(props) => props.theme.white};
-        border: 1px solid ${(props) => props.theme.white};
+        border: 1px solid ${(props) => props.theme.red};
         border-radius: 3px;
         text-transform: uppercase;
         letter-spacing: 1.1px;

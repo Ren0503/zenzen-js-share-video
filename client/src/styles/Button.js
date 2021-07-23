@@ -2,9 +2,9 @@ import styled, { css } from 'styled-components';
 
 const Button = styled.button`
     padding: 0.4rem 1rem;
-    background: linear-gradient(90deg, ${(props) => props.theme.purple}, ${(props) => props.theme.pink});
+    background: ${(props) => props.theme.red};
     color: ${(props) => props.theme.white};
-    border: 1px solid ${(props) => props.theme.white};
+    border: 1px solid ${(props) => props.theme.red};
     border-radius: 3px;
     letter-spacing: 1.1px;
 
