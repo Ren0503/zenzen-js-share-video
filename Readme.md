@@ -74,3 +74,15 @@
       │
       ├── .gitignore
       └── README.md
+
+
+### Screenshots
+
+
+|                                        Home                                        |                                        Detail                                        |                                        Search                                        |
+| :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| ![](https://github.com/Ren0503/zenzen-js-share-video/blob/master/client/src/assets/screenshot/home.png) | ![](https://github.com/Ren0503/zenzen-js-share-video/blob/master/client/src/assets/screenshot/detail.png) | ![](https://github.com/Ren0503/zenzen-js-share-video/blob/master/client/src/assets/screenshot/search.png) |
+
+|                                        Channel                                        |                                        Users                                        |                                        Upload                                        |
+| :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| ![](https://github.com/Ren0503/zenzen-js-share-video/blob/master/client/src/assets/screenshot/channel.png) | ![](https://github.com/Ren0503/zenzen-js-share-video/blob/master/client/src/assets/screenshot/users.png) | ![](https://github.com/Ren0503/zenzen-js-share-video/blob/master/client/src/assets/screenshot/upload.png) |
