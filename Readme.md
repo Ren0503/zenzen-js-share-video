@@ -1,5 +1,5 @@
 # ZenZen
-![ZenZen](https://github.com/Ren0503/zenzen/blob/master/client/public/logo.png)
+![ZenZen](https://github.com/Ren0503/zenzen-js-share-video/blob/master/client/src/assets/header.png)
 > Sharing Video P.E.R.N Stack. Repository is divided into 2 main packages: 
 - **server** This package container API for ZenZen, build with Nodejs, Express and PostgreSQL with Sequelize. Use REST API.
 - **client** Is a frontend for ZenZen, build with React, Redux Toolkit and Styled Component.
