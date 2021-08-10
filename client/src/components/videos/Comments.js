@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { client } from 'utils/fetch';
-import { timeSince } from 'utils/timeSince';
 import useInput from 'hooks/useInput';
 import { addComment } from 'reducers/video';
+import moment from 'moment';
 
 const Wrapper = styled.div`
     margin: 1rem 0;
@@ -109,7 +109,7 @@ const Comments = () => {
                                 </Link>
                             </span>
                             <span style={{ marginLeft: "0.6rem" }}>
-                                {timeSince(comment.createdAt)} ago
+                                {moment(comment.createdAt).fromNow()}
                             </span>
                         </p>
                         <p>{comment.text}</p>

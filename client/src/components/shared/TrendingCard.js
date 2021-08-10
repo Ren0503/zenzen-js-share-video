@@ -1,6 +1,6 @@
+import moment from 'moment';
 import React from 'react';
 import styled from 'styled-components';
-import { timeSince } from 'utils/timeSince';
 
 const Wrapper = styled.div`
     margin: 1.4rem 0;
@@ -82,7 +82,7 @@ const TrendingCard = ({ video }) => {
                     <span>•</span>{" "}
                     <span>{video.views || 0} views</span> 
                     <span>•</span>{" "}
-                    <span>{timeSince(video.createdAt)} ago</span>
+                    <span>{moment(video.createdAt).fromNow()}</span>
                 </p>
                 <p className="secondary">{video.description.substr(0, 130)}</p>
             </div>

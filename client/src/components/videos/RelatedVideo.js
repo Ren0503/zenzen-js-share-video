@@ -1,7 +1,7 @@
 import React from 'react';
+import moment from 'moment';
 import styled from 'styled-components';
 import Avatar from 'styles/Avatar';
-import { timeSince } from 'utils/timeSince';
 
 const Wrapper = styled.div`
     .row {
@@ -79,7 +79,7 @@ const RelatedVideo = ({ noUsername, hideAvatar, video }) => {
                                 <div>
                                     <span>{video.views || 0} views</span>
                                     {" "}<span>•</span>{" "}
-                                    <span>{timeSince(video.createdAt)} ago</span>
+                                    <span>{moment(video.createdAt).fromNow()}</span>
                                 </div>
                             </div>
                         </div>

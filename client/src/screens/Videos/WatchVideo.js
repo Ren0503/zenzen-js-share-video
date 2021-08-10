@@ -25,6 +25,7 @@ import { addChannel, removeChannel } from 'reducers/user';
 import { getRecommendation } from 'reducers/recommendation';
 import { addChannelLocalSt, removeChannelLocalSt } from 'utils/localStorage';
 import { client } from 'utils/fetch';
+import moment from 'moment';
 
 const Wrapper = styled.div`
     display: grid;
@@ -199,7 +200,7 @@ const WatchVideo = () => {
                         <p>
                             <span>{video.views || 0} views</span>
                             <span>•</span>{" "}
-                            <span>{video.createdAt.substring(0, 10)}</span>
+                            <span>{moment(video.createdAt).format('MMMM Do YYYY')}</span>
                         </p>
 
                         <div className="likes-dislikes flex-row">
