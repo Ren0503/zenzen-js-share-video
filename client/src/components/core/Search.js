@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { useHistory } from 'react-router';
 import styled from 'styled-components';
 import useInput from 'hooks/useInput';
+import { SearchIcon } from 'components/icons';
 
 const Wrapper = styled.div`
     input.search {
@@ -18,6 +19,13 @@ const Wrapper = styled.div`
         display: none;
         }
     }
+
+    button {
+        border: none;
+        outline: none;
+        background: ${(props) => props.theme.darkGrey};
+        padding: 0.36rem 1rem;
+    }
 `;
 
 const Search = () => {
@@ -25,26 +33,31 @@ const Search = () => {
     const searchTerm = useInput('');
 
     const handleSearch = (e) => {
-        if (e.keyCode === 13) {
-            if (!searchTerm.value.trim()) {
-                return toast.dark("Please enter the searchTerm");
-            }
-
+        e.preventDefault();
+        if (!searchTerm.value.trim()) {
+            return toast.dark("Please enter the searchTerm");
+        }
+        else {
             history.push(`/results/${searchTerm.value}`);
             searchTerm.setValue('');
         }
+
     };
 
     return (
         <Wrapper>
-            <input 
-                className="search"
-                type="text"
-                placeholder="Search"
-                value={searchTerm.value}
-                onKeyDown={handleSearch}
-                onChange={searchTerm.onChange}
-            />
+            <form onSubmit={handleSearch}>
+                <input
+                    className="search"
+                    type="text"
+                    placeholder="Search"
+                    value={searchTerm.value}
+                    onChange={searchTerm.onChange}
+                />
+                <button type="submit">
+                    <SearchIcon />
+                </button>
+            </form>
         </Wrapper>
     );
 }

@@ -13,3 +13,4 @@ export { CloseIcon } from './CloseIcon';
 export { SignoutIcon } from './SignoutIcon';
 export { LikeIcon } from './LikeIcon';
 export { DislikeIcon } from './DislikeIcon';
+export { SearchIcon } from './SearchIcon';
