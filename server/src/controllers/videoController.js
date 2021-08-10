@@ -50,7 +50,7 @@ exports.getVideo = asyncHandler(async (req, res, next) => {
         where: {
             [Op.and]: [
                 { videoId: req.params.id },
-                { userId: req.params.id },
+                { userId: req.user.id },
                 { like: 1 },
             ],
         },
@@ -60,7 +60,7 @@ exports.getVideo = asyncHandler(async (req, res, next) => {
         where: {
             [Op.and]: [
                 { videoId: req.params.id },
-                { userId: req.params.id },
+                { userId: req.user.id },
                 { like: -1 },
             ],
         },
