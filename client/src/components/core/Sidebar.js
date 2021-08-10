@@ -19,7 +19,7 @@ const SidebarWrapper = styled.div`
     top: 55px;
     left: 0;
     height: 100vh;
-    width: 240px;
+    width: 200px;
     background: ${(props) => props.theme.grey};
     padding-top: 1rem;
     overflow: auto;

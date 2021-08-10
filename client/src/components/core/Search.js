@@ -6,7 +6,7 @@ import useInput from 'hooks/useInput';
 import { SearchIcon } from 'components/icons';
 
 const Wrapper = styled.div`
-    input.search {
+    .search input {
         background: ${(props) => props.theme.black};
         padding: 0.4rem 1rem;
         border: 1px solid ${(props) => props.theme.darkGrey};
@@ -14,17 +14,17 @@ const Wrapper = styled.div`
         color: ${(props) => props.theme.primaryColor};
     }
 
-    @media screen and (max-width: 700px) {
-        input.search {
-        display: none;
-        }
-    }
-
-    button {
+    .search button {
         border: none;
         outline: none;
         background: ${(props) => props.theme.darkGrey};
         padding: 0.36rem 1rem;
+    }
+    
+    @media screen and (max-width: 700px) {
+        .search {
+            display: none;
+        }
     }
 `;
 
@@ -46,9 +46,8 @@ const Search = () => {
 
     return (
         <Wrapper>
-            <form onSubmit={handleSearch}>
+            <form onSubmit={handleSearch} className="search">
                 <input
-                    className="search"
                     type="text"
                     placeholder="Search"
                     value={searchTerm.value}

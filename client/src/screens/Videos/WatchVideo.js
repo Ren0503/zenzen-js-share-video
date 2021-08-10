@@ -6,7 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 import Button from 'styles/Button';
 import Player from 'components/videos/Player';
 import Comments from 'components/videos/Comments';
-import VideoCard from 'components/videos/VideoCard';
+import RelatedVideo from 'components/videos/RelatedVideo';
 import NoResults from 'components/shared/NoResult';
 import { LikeIcon, DislikeIcon } from 'components/icons';
 import WatchVideoSkeleton from 'components/skeleton/WatchVideoSkeleton';
@@ -25,7 +25,6 @@ import { addChannel, removeChannel } from 'reducers/user';
 import { getRecommendation } from 'reducers/recommendation';
 import { addChannelLocalSt, removeChannelLocalSt } from 'utils/localStorage';
 import { client } from 'utils/fetch';
-import { timeSince } from 'utils/timeSince';
 
 const Wrapper = styled.div`
     display: grid;
@@ -73,14 +72,6 @@ const Wrapper = styled.div`
     .channel-info-description p {
         font-size: 0.9rem;
         padding: 1rem 0;
-    }
-
-    .related-videos img {
-        height: 140px;
-    }
-
-    .related-videos div {
-        margin-bottom: 1rem;
     }
 
     svg {
@@ -208,7 +199,7 @@ const WatchVideo = () => {
                         <p>
                             <span>{video.views || 0} views</span>
                             <span>•</span>{" "}
-                            <span>{timeSince(video.createdAt)} ago</span>
+                            <span>{video.createdAt.substring(0, 10)}</span>
                         </p>
 
                         <div className="likes-dislikes flex-row">
@@ -262,10 +253,10 @@ const WatchVideo = () => {
                 <h3 style={{ marginBottom: "1rem" }}>Up Next</h3>
                 {next
                     .filter((vid) => vid.id !== video.id)
-                    .slice(0, 3)
+                    .slice(0, 6)
                     .map((video) => (
                         <Link key={video.id} to={`/watch/${video.id}`}>
-                            <VideoCard key={video.id} hideAvatar={true} video={video} />
+                            <RelatedVideo key={video.id} hideAvatar={true} video={video} />
                         </Link>
                     ))
                 }
