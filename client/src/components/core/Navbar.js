@@ -25,15 +25,6 @@ const Wrapper = styled.div`
         width: 500px;
     }
 
-    .toggle-navhandler {
-        display: none;
-    }
-
-    .logo span {
-        position: relative;
-        top: 1px;
-    }
-
     ul {
         list-style: none;
         display: flex;
@@ -52,12 +43,6 @@ const Wrapper = styled.div`
         top: 3px;
     }
 
-    @media screen and (max-width: 1093px) {
-        .toggle-navhandler {
-            display: block;
-        }
-    }
-
     @media screen and (max-width: 1000px) {
         input {
             width: 400px;
@@ -71,10 +56,6 @@ const Wrapper = styled.div`
     }
 
     @media screen and (max-width: 500px) {
-        .toggle-navhandler {
-            display: none;
-        }
-
         li svg {
             width: 30px;
             height: 30px;
@@ -82,6 +63,25 @@ const Wrapper = styled.div`
             position: relative;
             top: 0px;
         }
+    }
+`;
+
+const Hamburger = styled.div`
+    display: none;
+
+    @media screen and (max-width: 1093px) {
+        display: block;
+    }
+
+    @media screen and (max-width: 500px) {
+        display: none;
+    }
+`;
+
+const Logo = styled.div`
+    span {
+        position: relative;
+        top: 1px;
     }
 `;
 
@@ -97,17 +97,16 @@ const Navbar = () => {
 
     return (
         <Wrapper>
-            <div className="logo flex-row">
-                <HamburgerIcon
-                    className="toggle-navhandler"
-                    onClick={handleToggleSidebar}
-                />
+            <Logo className="flex-row">
+                <Hamburger onClick={handleToggleSidebar}>
+                    <HamburgerIcon />
+                </Hamburger>
                 <span>
                     <Link to="/">
                         <img src={logo} alt="Logo" width="120" />
                     </Link>
                 </span>
-            </div>
+            </Logo>
 
             <Search />
 

@@ -106,7 +106,7 @@ const GlobalStyle = createGlobalStyle`
 
 	.Toastify__toast--dark, .Toastify__toast--default {
 		background: ${(props) => props.theme.purple};
-    color: #fff;
+    	color: #fff;
 	}
 
 	@media screen and (max-width: 530px) {

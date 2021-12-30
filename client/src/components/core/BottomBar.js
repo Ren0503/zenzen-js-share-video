@@ -9,6 +9,30 @@ import {
     WatchIcon,
 } from 'components/icons';
 
+const Icons = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+        padding: 0;
+        margin: 0;
+    }
+
+    svg {
+        width: 30px;
+        height: 30px;
+        fill: ${(props) => props.theme.darkGrey};
+    }
+
+    img {
+        width: 26px;
+        height: 26px;
+        object-fit: cover;
+        border-radius: 13px;
+    }
+`;
+
 const Wrapper = styled.div`
     position: fixed;
     z-index: 100;
@@ -19,30 +43,6 @@ const Wrapper = styled.div`
     border-top: 1px solid ${(props) => props.theme.darkGrey};
     display: none;
     padding: 0.8rem 1rem;
-
-    .icons a {
-        padding: 0;
-        margin: 0;
-    }
-
-    .icons {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .icons svg {
-        width: 30px;
-        height: 30px;
-        fill: ${(props) => props.theme.darkGrey};
-    }
-
-    .icons img {
-        width: 26px;
-        height: 26px;
-        object-fit: cover;
-        border-radius: 13px;
-    }
 
     .active svg {
         fill: ${(props) => props.theme.primaryColor};
@@ -56,7 +56,7 @@ const Wrapper = styled.div`
 const BottomBar = () => {
     return (
         <Wrapper>
-            <div className="icons">
+            <Icons>
                 <NavLink activeClassName="active" exact to="/">
                     <HomeIcon />
                 </NavLink>
@@ -76,7 +76,7 @@ const BottomBar = () => {
                 <NavLink activeClassName="active" exact to="/feed/liked_videos">
                     <WatchIcon />
                 </NavLink>
-            </div>
+            </Icons>
         </Wrapper>
     );
 }
